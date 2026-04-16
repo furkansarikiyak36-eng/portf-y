@@ -68,42 +68,23 @@ const FILE_ICONS = {
 };
 
 const STATIC_FILES = [
-  // ── GLOBAL ──────────────────────────────────────────────────────────────────
-  { id: 1,  brand: "Global",       dept: "Reports",  title: "FY2024 Unilever Annual Report",         ext: "pdf",  status: "Final",     date: "2024-02-14", desc: "Official FY2024 filing. Source for underlying operating margin 16.1%, turnover €60.1B.", tags: ["#financials","#source-of-truth"] },
-  { id: 2,  brand: "Global",       dept: "Reports",  title: "Competitive Benchmark Matrix Q4 2024",  ext: "xlsx", status: "Final",     date: "2024-12-10", desc: "P&G, Nestlé, Henkel cross-category share and margin comparison.", tags: ["#benchmark","#competitive"] },
-  { id: 3,  brand: "Global",       dept: "Diagrams", title: "Gap Analysis → Solution Journey",       ext: "svg",  status: "Final",     date: "2025-01-08", desc: "End-to-end methodology: data collection → anomaly detection → severity scoring → corrective brief.", tags: ["#methodology","#gap-analysis"] },
-  { id: 4,  brand: "Global",       dept: "Diagrams", title: "Error Taxonomy & Severity Framework",   ext: "svg",  status: "Final",     date: "2025-01-05", desc: "Classifies dashboard errors into P0/P1/P2 tiers with decision rules for correction vs. removal.", tags: ["#framework","#methodology"] },
-  { id: 5,  brand: "Global",       dept: "Insights", title: "Portfolio ESG Scorecard 2024",          ext: "pdf",  status: "Final",     date: "2024-11-20", desc: "Compass KPI progress: plastic reduction, deforestation, living wages across 400 brands.", tags: ["#ESG","#compass"] },
-  { id: 6,  brand: "Global",       dept: "UI/UX",    title: "Dashboard Design System v2",            ext: "fig",  status: "Final",     date: "2025-01-15", desc: "Figma component library: color tokens, severity badges, chart patterns, brand card specs.", tags: ["#design-system","#figma"] },
-  { id: 7,  brand: "Global",       dept: "Creative", title: "Brand Portfolio Map Visual",            ext: "svg",  status: "Draft",     date: "2025-02-01", desc: "2×2 matrix plotting all 30 Power Brands by growth rate vs. margin contribution.", tags: ["#portfolio","#visualization"] },
-  { id: 8,  brand: "Global",       dept: "Reports",  title: "Divested & Discontinued Brands Register",ext: "xlsx", status: "Final",     date: "2024-10-05", desc: "Lipton (→CVC 2022), Dollar Shave Club, Elida Beauty. Reference for portfolio cleanup.", tags: ["#divestitures","#source-of-truth"] },
-  // ── DOVE ────────────────────────────────────────────────────────────────────
-  { id: 9,  brand: "Dove",         dept: "Creative", title: "Real Beauty Campaign Brief 2025",       ext: "pdf",  status: "Final",     date: "2025-01-20", desc: "Campaign strategy, tone of voice, asset specs for Q1–Q2 global rollout.", tags: ["#campaign","#creative-brief"] },
-  { id: 10, brand: "Dove",         dept: "Insights", title: "Consumer Sentiment Deep Dive",          ext: "pptx", status: "Final",     date: "2024-11-12", desc: "NPS trends, social listening 700K+ mentions, Şikayetvar/Ekşi aggregation TR market.", tags: ["#consumer","#NLP"] },
-  { id: 11, brand: "Dove",         dept: "UI/UX",    title: "Dove.com Redesign Prototype",           ext: "fig",  status: "In Review", date: "2025-02-10", desc: "Mobile-first redesign. Accessibility audit AA passed. Handoff ready pending stakeholder sign-off.", tags: ["#redesign","#mobile"] },
-  { id: 12, brand: "Dove",         dept: "Diagrams", title: "Dove Revenue Attribution Flow",         ext: "svg",  status: "Final",     date: "2024-12-20", desc: "Segment-level revenue rollup to Beauty & Wellbeing. Corrects 16.8% → 16.1% margin.", tags: ["#financials","#correction"] },
-  // ── BEN & JERRY'S ──────────────────────────────────────────────────────────
-  { id: 13, brand: "Ben & Jerry's", dept: "Insights", title: "Activism Risk & Brand Trust Study",    ext: "pdf",  status: "Final",     date: "2024-09-15", desc: "Quantifies impact of political activism on purchase intent across 6 markets.", tags: ["#risk","#brand-trust"] },
-  { id: 14, brand: "Ben & Jerry's", dept: "Creative", title: "Limited Edition Flavor Roadmap 2025",  ext: "pptx", status: "Draft",     date: "2025-01-30", desc: "Pipeline of 8 flavors tied to social campaigns. Links to influencer brief.", tags: ["#NPD","#campaign"] },
-  { id: 15, brand: "Ben & Jerry's", dept: "Diagrams", title: "Governance Tension Decision Tree",     ext: "svg",  status: "Final",     date: "2024-10-10", desc: "Maps Unilever/Vermont-board conflicts to resolution pathways and brand risk scenarios.", tags: ["#governance","#risk"] },
-  // ── KNORR ───────────────────────────────────────────────────────────────────
-  { id: 16, brand: "Knorr",         dept: "Reports",  title: "Future Foods Market Analysis",         ext: "pdf",  status: "Final",     date: "2024-08-20", desc: "Plant-based & functional food segment sizing. USG driver decomposition.", tags: ["#market-analysis","#NPD"] },
-  { id: 17, brand: "Knorr",         dept: "Creative", title: "Knorr Rebrand Visual Identity",        ext: "fig",  status: "In Review", date: "2025-02-05", desc: "Logo evolution, packaging system, typography. Pending global market approval.", tags: ["#rebrand","#identity"] },
-  // ── LIFEBUOY ────────────────────────────────────────────────────────────────
-  { id: 18, brand: "Lifebuoy",      dept: "Reports",  title: "Lifebuoy Stagnation Diagnostic",      ext: "pdf",  status: "Final",     date: "2024-12-01", desc: "Explains USG data anomaly. Root causes: commodity inflation, distribution gaps in SEA.", tags: ["#correction","#diagnostic"] },
-  { id: 19, brand: "Lifebuoy",      dept: "Diagrams", title: "Watch-List Entry Rationale",          ext: "svg",  status: "Final",     date: "2024-12-05", desc: "Decision diagram: why Lifebuoy risk status was escalated. Evidence chain from quarterly data.", tags: ["#correction","#evidence"] },
-  // ── NUTRAFOL ─────────────────────────────────────────────────────────────────
-  { id: 20, brand: "Nutrafol",      dept: "Insights", title: "Prestige Hair Wellness Category Map",  ext: "pptx", status: "Final",     date: "2024-10-18", desc: "Category sizing, target consumer, claim substantiation. Double-digit growth confirmed.", tags: ["#category","#disclaimer"] },
-  // ── LIQUID I.V. ──────────────────────────────────────────────────────────────
-  { id: 21, brand: "Liquid I.V.",   dept: "Reports",  title: "Hydration Segment Competitive Scan",  ext: "pdf",  status: "Final",     date: "2024-09-28", desc: "LMNT, Nuun, DripDrop comparison. Growth narrative verified from Unilever investor day.", tags: ["#competitive","#disclaimer"] },
-  // ── HELLMANN'S ───────────────────────────────────────────────────────────────
-  { id: 22, brand: "Hellmann's",    dept: "Creative", title: "Plant-Based Mayo Launch Brief",        ext: "pdf",  status: "Draft",     date: "2025-02-15", desc: "Creative brief for Hellmann's Vegan range expansion into 15 new markets Q2 2025.", tags: ["#NPD","#campaign"] },
-  // ── MAGNUM ────────────────────────────────────────────────────────────────────
-  { id: 23, brand: "Magnum",        dept: "Creative", title: "Magnum X Luxury Collab Brief",         ext: "pptx", status: "Draft",     date: "2025-01-25", desc: "Limited edition fashion collaboration. Targets premium indulgence segment and Gen Z.", tags: ["#campaign","#premium"] },
-  // ── PUKKA ─────────────────────────────────────────────────────────────────────
-  { id: 24, brand: "Pukka",         dept: "Reports",  title: "US Market Entry Assessment",           ext: "pdf",  status: "In Review", date: "2025-02-08", desc: "Whole Foods, Target channel analysis. DTC subscription model feasibility for US launch.", tags: ["#market-entry","#DTC"] },
-  // ── DERMALOGICA ───────────────────────────────────────────────────────────────
-  { id: 25, brand: "Dermalogica",   dept: "Diagrams", title: "Clinical Channel Expansion Map",       ext: "svg",  status: "Final",     date: "2024-11-30", desc: "ME and Asia clinic footprint plan. AI skin diagnostic integration pathway.", tags: ["#expansion","#clinical"] },
+  /* 
+  // ── TEMPLATE: COPY & PASTE FOR NEW FILES ────────────────────────────────────
+  // Ensure 'brand' exactly matches one from your BRAND_LIST.
+  // Ensure 'dept' exactly matches one from your DEPARTMENTS.
+  // 'status' can be: "Final", "Draft", "In Review", or "Archived".
+  { 
+    id: 1, 
+    brand: "Global", 
+    dept: "Reports", 
+    title: "Your Document Title Here", 
+    ext: "pdf",   // Supported: pdf, docx, pptx, xlsx, fig, svg, png, mp4, etc.
+    status: "Draft", 
+    date: "2026-04-17", 
+    desc: "Detailed description of the file.", 
+    tags: ["#tag1", "#tag2"] 
+  },
+  */
 ];
 
 const JOURNEY_STEPS = [
